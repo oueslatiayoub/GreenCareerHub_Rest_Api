@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const bodyParser = require('body-parser')
 
 const app = express()
 const PORT = 3000 || process.env.PORT;
@@ -9,7 +10,8 @@ const connectDB = require('./server/config/db');
 //connection to database
 connectDB();
 
-app.use('/', require('./server/routes/learning/main'));
+
+app.use('/', require('./server/routes/formation/main'));
 
 app.get('' , (req,res)=>{
     res.send("Hello world");
